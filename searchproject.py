@@ -53,7 +53,7 @@ print(f'You have searched for {inputCuisineType} recipes using {inputIngredient}
 #     print(recipe['label'])
 #     print(recipe['uri'])
 
-for i in range(1, 12):
+for i in range(1, 11):
     print("----")
     endPagination = i * 10
     startPagination = endPagination - 10

@@ -21,8 +21,6 @@ while inputIngredient == "" or inputIngredient.isspace():
 # prints out choose ingredient/s
 # print("You have chosen these ingredients: " + inputIngredient)
 
-addIngredients = inputIngredient
-
 # ask user to enter cuisine preference
 inputCuisineType = input(
     f"Please enter choose a preferred cuisine from the following options below - \n{CuisineType_array}: ")
@@ -31,7 +29,6 @@ while inputCuisineType.capitalize() not in CuisineType_array:
         f"Invalid Response. Please enter choose a preferred cuisine from the following options below or type 'N' if none - \n{CuisineType_array}: ")
 # print("You have chosen: " + inputCuisineType)
 
-addCuisineType = inputCuisineType
 print("----")
 print(f'You have searched for {inputCuisineType} recipes using {inputIngredient}')
 
@@ -60,7 +57,7 @@ for i in range(1, 12):
     print("----")
     endPagination = i * 10
     startPagination = endPagination - 10
-    url = f"https://api.edamam.com/search?q={addIngredients}&cuisineType={addCuisineType}&{includeAppId}&{includeAppKey}&from={startPagination}&to={endPagination}"
+    url = f"https://api.edamam.com/search?q={inputIngredient}&cuisineType={inputCuisineType}&{includeAppId}&{includeAppKey}&from={startPagination}&to={endPagination}"
     print(f"Showing recipe results from {startPagination} to {endPagination}")
     r = requests.get(url)
 
